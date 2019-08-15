@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/railroadmedia/js-services/issues"
   },
-  "homepage": "https://github.com/railroadmedia/js-services#readme"
+  "homepage": "https://github.com/railroadmedia/js-services#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }

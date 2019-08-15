@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://CurtisConway:884ee451b03d6f2ad544c434c49f4f776556de48@github.com/railroadmedia/js-services.git"
+    "url": "https://github.com/railroadmedia/js-services.git"
   },
   "author": "Curtis Conway",
   "license": "MIT",

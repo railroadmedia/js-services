@@ -1,0 +1,19 @@
+{
+  "name": "@musora/services",
+  "version": "0.0.1",
+  "description": "HTTP request modules for all Musora back-end services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://CurtisConway:884ee451b03d6f2ad544c434c49f4f776556de48@github.com/railroadmedia/js-services.git"
+  },
+  "author": "Curtis Conway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/railroadmedia/js-services/issues"
+  },
+  "homepage": "https://github.com/railroadmedia/js-services#readme"
+}

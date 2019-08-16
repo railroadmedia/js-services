@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "docs": "jsdoc2md src/*.js > docs/*.md"
+    "docs": "./document.sh"
   },
   "repository": "https://github.com/railroadmedia/js-services.git",
   "author": "Curtis Conway",

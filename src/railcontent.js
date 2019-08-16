@@ -9,6 +9,82 @@ import axios from 'axios';
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
+ * @param {String|Number} params.id - Content ID
+ * @returns {Promise} Response or Error Object
+ */
+export function getContentById({
+    url,
+    id,
+}) {
+    return new Promise((resolve) => {
+        axios
+            .get(`${url}/railcontent/content/${id}`)
+            .then((response) => {
+                resolve({ response });
+            })
+            .catch((error) => {
+                resolve({ error });
+            });
+    });    
+}
+
+/**
+ * Get a list of content
+ *
+ * @param {Object} params - Function parameters
+ * @param {String} params.url - The endpoint url
+ * @param {Array} params.ids - Array of content Ids
+ * @returns {Promise} Response or Error Object
+ */
+export function getContentByIds({
+    url,
+    ids,
+}) {
+    return new Promise((resolve) => {
+        axios
+            .get(`${url}/railcontent/content/get-by-ids`, {
+                params: {
+                    ids: ids.join(','),
+                },
+            })
+            .then((response) => {
+                resolve({ response });
+            })
+            .catch((error) => {
+                resolve({ error });
+            });
+    });    
+}
+
+/**
+ * Get a list of content
+ *
+ * @param {Object} params - Function parameters
+ * @param {String} params.url - The endpoint url
+ * @param {List} params.parentID - parentID
+ * @returns {Promise} Response or Error Object
+ */
+export function getContentChildById({
+    url,
+    parentId,
+}) {
+    return new Promise((resolve) => {
+        axios
+            .get(`${url}/railcontent/content/parent/${parentId}`)
+            .then((response) => {
+                resolve({ response });
+            })
+            .catch((error) => {
+                resolve({ error });
+            });
+    });    
+}
+
+/**
+ * Get a list of content
+ *
+ * @param {Object} params - Function parameters
+ * @param {String} params.url - The endpoint url
  * @param {String} params.brand - Application brand
  * @param {Number|String} params.limit - Maximum amount of results per page
  * @param {Number|String} params.page - The page of content to return results for
@@ -58,16 +134,26 @@ export function getContent({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
- * @param {String|Number} params.id - Content ID
+ * @param {String|Number} params.limit - number of contents returned 
+ * @param {String|Number} params.page - page of result set to return
+ * @param {String} params.term - search term
  * @returns {Promise} Response or Error Object
  */
-export function getContentById({
+export function search({
     url,
-    id,
+    page = 10,
+    limit = 1,
+    term,
 }) {
     return new Promise((resolve) => {
         axios
-            .get(`${url}/railcontent/content/${id}`)
+            .get(`${url}/railcontent/content/search`, {
+                params: {
+                    page,
+                    limit,
+                    term,
+                },
+            })
             .then((response) => {
                 resolve({ response });
             })
@@ -80,6 +166,10 @@ export function getContentById({
 const Railcontent = {
     getContent,
     getContentById,
+    getContentByIds,
+    getContentChildById,
+    search,
+    
 };
 
 export default Railcontent;

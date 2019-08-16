@@ -1,18 +1,23 @@
+/**
+ * @module Railcontent
+ */
+
 import axios from 'axios';
 
 /**
  * Get a list of content
  *
- * @param {String} url
- * @param {String} brand
- * @param {Number|String} limit
- * @param {Array} statuses - Accepted values ('published', 'scheduled', 'draft', 'archived')
- * @param {String} sort
- * @param {String} term
- * @param {Array} included_types
- * @param {Array} included_fields
- * @param {Number|String} page
- * @returns {Promise} - Response or Error Object
+ * @param {Object} params - Function parameters
+ * @param {String} params.url
+ * @param {String} params.brand
+ * @param {Number|String} params.page
+ * @param {Number|String} params.limit
+ * @param {String} params.sort
+ * @param {Array} params.statuses - Accepted values ('published', 'scheduled', 'draft', 'archived')
+ * @param {String} params.term
+ * @param {Array} params.included_types
+ * @param {Array} params.included_fields
+ * @returns {Promise} Response or Error Object
  */
 export function getContent({
     url,
@@ -48,6 +53,7 @@ export function getContent({
     });
 }
 
+// eslint-disable-next-line no-use-before-define
 const Railcontent = {
     getContent,
 };

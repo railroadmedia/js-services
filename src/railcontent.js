@@ -3,7 +3,7 @@ import axios from 'axios';
 /**
  * Get a list of content
  *
- * @param {String} prefix
+ * @param {String} url
  * @param {String} brand
  * @param {Number|String} limit
  * @param {Array} statuses - Accepted values ('published', 'scheduled', 'draft', 'archived')
@@ -12,22 +12,22 @@ import axios from 'axios';
  * @param {Array} included_types
  * @param {Array} included_fields
  * @param {Number|String} page
- * @returns {Promise} - Response Object or Error Object
+ * @returns {Promise} - Response or Error Object
  */
 export function getContent({
-    prefix,
+    url,
     brand = 'drumeo',
+    page = '1',
     limit = '20',
-    statuses = ['published', 'scheduled', 'draft'],
     sort = '-created_on',
+    statuses = ['published', 'scheduled', 'draft'],
     term,
     included_types,
     included_fields,
-    page = '1',
 }) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         axios
-            .get(`${prefix}/railcontent/content`, {
+            .get(`${url}/railcontent/content`, {
                 params: {
                     brand,
                     limit,
@@ -39,11 +39,11 @@ export function getContent({
                     page,
                 },
             })
-            .then(response => {
-                resolve(response);
+            .then((response) => {
+                resolve({ response });
             })
-            .catch(error => {
-                reject(error);
+            .catch((error) => {
+                resolve({ error });
             });
     });
 }

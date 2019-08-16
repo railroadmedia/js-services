@@ -37,4 +37,4 @@ getContent(...);
 ## Local Development
 
 - `yarn test` - Run all tests
-- `./document.sh` - Auto generate documentation
+- `yarn docs` - Auto generate documentation

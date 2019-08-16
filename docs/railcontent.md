@@ -12,13 +12,13 @@ Get a list of content
 | Param | Type | Description |
 | --- | --- | --- |
 | params | <code>Object</code> | Function parameters |
-| params.url | <code>String</code> |  |
-| params.brand | <code>String</code> |  |
-| params.page | <code>Number</code> \| <code>String</code> |  |
-| params.limit | <code>Number</code> \| <code>String</code> |  |
-| params.sort | <code>String</code> |  |
-| params.statuses | <code>Array</code> | Accepted values ('published', 'scheduled', 'draft', 'archived') |
-| params.term | <code>String</code> |  |
-| params.included_types | <code>Array</code> |  |
-| params.included_fields | <code>Array</code> |  |
+| params.url | <code>String</code> | The endpoint url |
+| params.brand | <code>String</code> | Application brand |
+| params.limit | <code>Number</code> \| <code>String</code> | Maximum amount of results per page |
+| params.page | <code>Number</code> \| <code>String</code> | The page of content to return results for |
+| params.sort | <code>String</code> | The database column to sort results by |
+| params.statuses | <code>Array</code> | Content statuses to filter the results by |
+| params.term | <code>String</code> | A search term to filter the results by |
+| params.included_types | <code>Array</code> | Content types to filter the results by |
+| params.included_fields | <code>Array</code> | Included field types to filter the results by |
 

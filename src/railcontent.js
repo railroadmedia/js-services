@@ -8,22 +8,22 @@ import axios from 'axios';
  * Get a list of content
  *
  * @param {Object} params - Function parameters
- * @param {String} params.url
- * @param {String} params.brand
- * @param {Number|String} params.page
- * @param {Number|String} params.limit
- * @param {String} params.sort
- * @param {Array} params.statuses - Accepted values ('published', 'scheduled', 'draft', 'archived')
- * @param {String} params.term
- * @param {Array} params.included_types
- * @param {Array} params.included_fields
+ * @param {String} params.url - The endpoint url
+ * @param {String} params.brand - Application brand
+ * @param {Number|String} params.limit - Maximum amount of results per page
+ * @param {Number|String} params.page - The page of content to return results for
+ * @param {String} params.sort - The database column to sort results by
+ * @param {Array} params.statuses - Content statuses to filter the results by
+ * @param {String} params.term - A search term to filter the results by
+ * @param {Array} params.included_types - Content types to filter the results by
+ * @param {Array} params.included_fields - Included field types to filter the results by
  * @returns {Promise} Response or Error Object
  */
 export function getContent({
     url,
     brand = 'drumeo',
-    page = '1',
     limit = '20',
+    page = '1',
     sort = '-created_on',
     statuses = ['published', 'scheduled', 'draft'],
     term,

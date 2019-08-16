@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "jsdoc2md src/*.js > docs/*.md"
   },
   "repository": "https://github.com/railroadmedia/js-services.git",
   "author": "Curtis Conway",
@@ -27,6 +28,7 @@
     "eslint-plugin-import": "^2.18.2",
     "esm": "^3.2.25",
     "jest": "^24.9.0",
+    "jsdoc-to-markdown": "^5.0.0",
     "nock": "^10.0.6"
   }
 }

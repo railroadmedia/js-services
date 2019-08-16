@@ -53,8 +53,33 @@ export function getContent({
     });
 }
 
+/**
+ * Get a list of content
+ *
+ * @param {Object} params - Function parameters
+ * @param {String} params.url - The endpoint url
+ * @param {String|Number} params.id - Content ID
+ * @returns {Promise} Response or Error Object
+ */
+export function getContentById({
+    url,
+    id,
+}) {
+    return new Promise((resolve) => {
+        axios
+            .get(`${url}/railcontent/content/${id}`)
+            .then((response) => {
+                resolve({ response });
+            })
+            .catch((error) => {
+                resolve({ error });
+            });
+    });    
+}
+
 const Railcontent = {
     getContent,
+    getContentById,
 };
 
 export default Railcontent;

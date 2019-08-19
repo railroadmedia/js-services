@@ -865,10 +865,10 @@ export function changeUserAccess({
 }
 
 /**
- * Delete user access to content
+ * Delete user access to content 
  *
  * @param {Object} params - Function parameters
- * @param {String} params.url - The endpoint url
+ * @param {String} params.url - The endpoint's url
  * @param {String|Number} params.userPermissionId - The permission id
  * @returns {Promise} Response or Error Object
  */

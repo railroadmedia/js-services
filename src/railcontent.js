@@ -61,7 +61,7 @@ export function getContentByIds({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
- * @param {String|Number} params.parentID - parentID
+ * @param {String|Number} params.parentId - The parent content ID
  * @returns {Promise} Response or Error Object
  */
 export function getContentChildById({
@@ -86,25 +86,29 @@ export function getContentChildById({
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
  * @param {String} params.brand - Application brand
- * @param {Number|String} params.limit - Maximum amount of results per page
- * @param {Number|String} params.page - The page of content to return results for
- * @param {String} params.sort - The database column to sort results by
- * @param {Array} params.statuses - Content statuses to filter the results by
+ * @param {Number|String} params.limit=20 - Maximum amount of results per page
+ * @param {Number|String} params.page=1 - The page of content to return results for
+ * @param {String} params.sort=-created_on - The database column to sort results by
+ * @param {Array} params.statuses=['published', 'scheduled', 'draft'] - Content statuses to filter the results by
  * @param {String} params.term - A search term to filter the results by
  * @param {Array} params.included_types - Content types to filter the results by
- * @param {Array} params.included_fields - Included field types to filter the results by
+ * @param {Array} params.required_fields - Array of key value pairs to filter the results by ex: {key:"difficulty", value:"2"}
+ * @param {Array} params.required_user_states - All returned contents are required to have these states for the authenticated user
+ * @param {Array} params.required_user_playlists - All returned contents are required to be inside these authenticated users playlists.
  * @returns {Promise} Response or Error Object
  */
 export function getContent({
     url,
-    brand = 'drumeo',
+    brand,
     limit = '20',
     page = '1',
     sort = '-created_on',
     statuses = ['published', 'scheduled', 'draft'],
     term,
     included_types,
-    included_fields,
+    required_fields = [],
+    required_user_states = [],
+    required_user_playlists = [],
 }) {
     return new Promise((resolve) => {
         axios
@@ -112,12 +116,14 @@ export function getContent({
                 params: {
                     brand,
                     limit,
+                    page,
                     statuses,
                     sort,
                     term,
                     included_types,
-                    included_fields,
-                    page,
+                    required_fields: required_fields.map((field) => `${field.key},${field.value}`),
+                    required_user_states,
+                    required_user_playlists,
                 },
             })
             .then((response) => {
@@ -134,24 +140,36 @@ export function getContent({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
- * @param {String|Number} params.limit - number of contents returned 
- * @param {String|Number} params.page - page of result set to return
+ * @param {String} params.brand - Contents from the brand will be returned.
+ * @param {String|Number} params.limit=20 - number of contents returned
+ * @param {String|Number} params.page=1 - page of result set to return
  * @param {String} params.term - search term
+ * @param {Array} params.included_types - Contents with these types will be returned
+ * @param {Array} params.statuses=['published', 'scheduled', 'draft'] - All content must have one of these statuses.
+ * @param {String} params.sort=-score - Key to sort the results by. Can be any of the following: `score` or `content_published_on`
  * @returns {Promise} Response or Error Object
  */
 export function searchContent({
     url,
-    page,
-    limit,
+    brand,
+    page = '1',
+    limit = '20',
     term,
+    included_types = [],
+    statuses = ['published', 'scheduled', 'draft'],
+    sort = '-score',
 }) {
     return new Promise((resolve) => {
         axios
             .get(`${url}/railcontent/content/search`, {
                 params: {
+                    brand,
                     page,
                     limit,
                     term,
+                    included_types,
+                    statuses,
+                    sort,
                 },
             })
             .then((response) => {
@@ -170,14 +188,18 @@ export function searchContent({
  * @param {String} params.url - The endpoint url
  * @param {String} params.slug - slug of content
  * @param {String} params.type - type of content
- * @param {String} params.status - status
+ * @param {String} params.status=draft - status
+ * @param {String} params.brand - The brand to create content for
+ * @param {String} params.parent_id - The parent ID you wish to create a content child for
  * @returns {Promise} Response or Error Object
  */
 export function storeContent({
     url,
-    slug = 'test-slug', 
-    type = 'course-lesson',
+    type,
+    slug,
     status = 'draft',
+    brand,
+    parent_id,
 }) {
     return new Promise((resolve) => {
         axios
@@ -186,6 +208,8 @@ export function storeContent({
                     slug, 
                     type,
                     status,
+                    brand,
+                    parent_id,
                 },
             })
             .then((response) => {
@@ -202,22 +226,34 @@ export function storeContent({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
- * @param {String} params.slug - slug of content
- * @param {String} params.status - status
+ * @param {String} params.brand - New content brand
+ * @param {String} params.slug - New slug of the content
+ * @param {String} params.status - New status. Can be 'draft' 'published' 'archived'
+ * @param {String} params.type - The new content type
+ * @param {String} params.published_on - The new published on date
+ * @param {String} params.parent_id - The parent ID you wish to attach this content to
  * @returns {Promise} Response or Error Object
  */
 export function patchContent({
     url,
+    brand,
     id,
     slug,
+    type,
+    published_on,
     status,
+    parent_id,
 }) {
     return new Promise((resolve) => {
         axios
             .put(`${url}/railcontent/content/${id}`, {
                 data: {
+                    brand,
                     slug, 
                     status,
+                    type,
+                    published_on,
+                    parent_id,
                 },
             })
             .then((response) => {
@@ -351,6 +387,7 @@ export function updateContentField({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
+ * @param {String} params.token - The endpoint url
  * @param {String|Number} params.fieldId - integer id of content
  * @returns {Promise} Response or Error Object
  */

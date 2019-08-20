@@ -6,28 +6,43 @@ import * as Railcontent from '../../src/railcontent';
 const CODE_200_ENDPOINT = 'https://200response.com';
 const CODE_400_ENDPOINT = 'https://400response.com';
 const CODE_500_ENDPOINT = 'https://500response.com';
+const CODE_200_RESPONSE = { results: 'success' };
+const CODE_400_RESPONSE = { detail: 'error' };
+const CODE_500_RESPONSE = { detail: 'error' };
 
 describe('Railcontent', () => {
     // Before every test we need to create mocks for the endpoint
     beforeEach(() => {
-        // Mock a successful 2xx request
+        // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
             .get(/railcontent/)
-            .reply(200, {
-                results: 'success',
-            });
+            .reply(200, CODE_200_RESPONSE)
+            .put(/railcontent/)
+            .reply(200, CODE_200_RESPONSE)
+            .patch(/railcontent/)
+            .reply(200, CODE_200_RESPONSE)
+            .delete(/railcontent/)
+            .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
             .get(/railcontent/)
-            .reply(400, {
-                detail: 'error',
-            });
+            .reply(400, CODE_400_RESPONSE)
+            .put(/railcontent/)
+            .reply(400, CODE_400_RESPONSE)
+            .patch(/railcontent/)
+            .reply(400, CODE_400_RESPONSE)
+            .delete(/railcontent/)
+            .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
             .get(/railcontent/)
-            .reply(500, {
-                detail: 'error',
-            });
+            .reply(500, CODE_500_RESPONSE)
+            .put(/railcontent/)
+            .reply(500, CODE_500_RESPONSE)
+            .patch(/railcontent/)
+            .reply(500, CODE_500_RESPONSE)
+            .delete(/railcontent/)
+            .reply(500, CODE_500_RESPONSE);
     });
     afterAll(() => {
         nock.restore();

@@ -1,8 +1,12 @@
 import { getContent } from './src/railcontent';
+import { configure } from './index';
 
 (async function init() {
+    configure({
+        baseURL: 'https://staging.musora.com',
+    });
+
     const { response, error } = await getContent({
-        url: 'https://staging.musora.com',
         brand: 'pianote',
         included_types: ['course'],
     });

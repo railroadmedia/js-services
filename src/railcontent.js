@@ -1,6 +1,4 @@
-/**
- * @module Railcontent
- */
+/** @module Railcontent */
 
 import axios from 'axios';
 
@@ -13,7 +11,7 @@ import axios from 'axios';
  * @returns {Promise} Response or Error Object
  */
 export function getContentById({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -37,7 +35,7 @@ export function getContentById({
  * @returns {Promise} Response or Error Object
  */
 export function getContentByIds({
-    url,
+    url = '',
     ids = [],
 }) {
     return new Promise((resolve) => {
@@ -65,7 +63,7 @@ export function getContentByIds({
  * @returns {Promise} Response or Error Object
  */
 export function getContentChildById({
-    url,
+    url = '',
     parentId,
 }) {
     return new Promise((resolve) => {
@@ -98,7 +96,7 @@ export function getContentChildById({
  * @returns {Promise} Response or Error Object
  */
 export function getContent({
-    url,
+    url = '',
     brand,
     limit = '20',
     page = '1',
@@ -150,7 +148,7 @@ export function getContent({
  * @returns {Promise} Response or Error Object
  */
 export function searchContent({
-    url,
+    url = '',
     brand,
     page = '1',
     limit = '20',
@@ -194,7 +192,7 @@ export function searchContent({
  * @returns {Promise} Response or Error Object
  */
 export function storeContent({
-    url,
+    url = '',
     type,
     slug,
     status = 'draft',
@@ -235,7 +233,7 @@ export function storeContent({
  * @returns {Promise} Response or Error Object
  */
 export function patchContent({
-    url,
+    url = '',
     brand,
     id,
     slug,
@@ -274,7 +272,7 @@ export function patchContent({
  * @returns {Promise} Response or Error Object
  */
 export function deleteContent({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -298,7 +296,7 @@ export function deleteContent({
  * @returns {Promise} Response or Error Object
  */
 export function softDeleteContent({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -326,7 +324,7 @@ export function softDeleteContent({
  * @returns {Promise} Response or Error Object
  */
 export function storeContentField({
-    url,
+    url = '',
     id,
     content_id,
     key,
@@ -362,7 +360,7 @@ export function storeContentField({
  * @returns {Promise} Response or Error Object
  */
 export function updateContentField({
-    url,
+    url = '',
     fieldId,
     value,
 }) {
@@ -392,7 +390,7 @@ export function updateContentField({
  * @returns {Promise} Response or Error Object
  */
 export function deleteContentField({
-    url,
+    url = '',
     fieldId,
 }) {
     return new Promise((resolve) => {
@@ -416,7 +414,7 @@ export function deleteContentField({
  * @returns {Promise} Response or Error Object
  */
 export function getContentField({
-    url,
+    url = '',
     fieldId,
 }) {
     return new Promise((resolve) => {
@@ -442,7 +440,7 @@ export function getContentField({
  * @returns {Promise} Response or Error Object
  */
 export function storeContentDatum({
-    url,
+    url = '',
     value,
     content_id, 
     key,
@@ -475,7 +473,7 @@ export function storeContentDatum({
  * @returns {Promise} Response or Error Object
  */
 export function updateContentDatum({
-    url,
+    url = '',
     id, 
     value,
 }) {
@@ -504,7 +502,7 @@ export function updateContentDatum({
  * @returns {Promise} Response or Error Object
  */
 export function deleteContentDatum({
-    url,
+    url = '',
     id, 
 }) {
     return new Promise((resolve) => {
@@ -530,7 +528,7 @@ export function deleteContentDatum({
  * @returns {Promise} Response or Error Object
  */
 export function storeContentHierarchy({
-    url,
+    url = '',
     parent_id,
     child_id,
     child_position,
@@ -563,7 +561,7 @@ export function storeContentHierarchy({
  * @returns {Promise} Response or Error Object
  */
 export function deleteContentFromHierarchy({
-    url,
+    url = '',
     parent_id,
     child_id,
 }) {
@@ -588,7 +586,7 @@ export function deleteContentFromHierarchy({
  * @returns {Promise} Response or Error Object
  */
 export function startAuthenticatedUserProgress({
-    url,
+    url = '',
     content_id,
 }) {
     return new Promise((resolve) => {
@@ -613,7 +611,7 @@ export function startAuthenticatedUserProgress({
  * @returns {Promise} Response or Error Object
  */
 export function saveAuthenticatedUserProgress({
-    url,
+    url = '',
     content_id,
     progress_percent,
 }) {
@@ -643,7 +641,7 @@ export function saveAuthenticatedUserProgress({
  * @returns {Promise} Response or Error Object
  */
 export function resetAuthenticatedUserProgress({
-    url,
+    url = '',
     content_id,
 }) {
     return new Promise((resolve) => {
@@ -671,7 +669,7 @@ export function resetAuthenticatedUserProgress({
  * @returns {Promise} Response or Error Object
  */
 export function completeAuthenticatedUserProgress({
-    url,
+    url = '',
     content_id,
 }) {
     return new Promise((resolve) => {
@@ -699,7 +697,7 @@ export function completeAuthenticatedUserProgress({
  * @returns {Promise} Response or Error Object
  */
 export function storePermission({
-    url,
+    url = '',
     name,
 }) {
     return new Promise((resolve) => {
@@ -728,7 +726,7 @@ export function storePermission({
  * @returns {Promise} Response or Error Object
  */
 export function changePermission({
-    url,
+    url = '',
     name,
     id,
 }) {
@@ -757,7 +755,7 @@ export function changePermission({
  * @returns {Promise} Response or Error Object
  */
 export function deletePermission({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -782,7 +780,7 @@ export function deletePermission({
  * @returns {Promise} Response or Error Object
  */
 export function assignPermission({
-    url,
+    url = '',
     content_type,
     permission_id,
 }) {
@@ -813,7 +811,7 @@ export function assignPermission({
  * @returns {Promise} Response or Error Object
  */
 export function dissociatePermission({
-    url,
+    url = '',
     content_type,
     permission_id,
 }) {
@@ -846,7 +844,7 @@ export function dissociatePermission({
  * @returns {Promise} Response or Error Object
  */
 export function giveUserAccess({
-    url,
+    url = '',
     user_id, 
     permission_id,
     start_date, 
@@ -881,7 +879,7 @@ export function giveUserAccess({
  * @returns {Promise} Response or Error Object
  */
 export function changeUserAccess({
-    url,
+    url = '',
     userPermissionId,
     expiration_date,
 }) {
@@ -910,7 +908,7 @@ export function changeUserAccess({
  * @returns {Promise} Response or Error Object
  */
 export function deleteUserAccess({
-    url,
+    url = '',
     userPermissionId,
 }) {
     return new Promise((resolve) => {
@@ -935,7 +933,7 @@ export function deleteUserAccess({
  * @returns {Promise} Response or Error Object
  */
 export function pullUserPermissions({
-    url,
+    url = '',
     user_id,
     only_active,
 }) {
@@ -966,7 +964,7 @@ export function pullUserPermissions({
  * @returns {Promise} Response or Error Object
  */
 export function changeComment({
-    url,
+    url = '',
     comment,
     id,
 }) {
@@ -995,7 +993,7 @@ export function changeComment({
  * @returns {Promise} Response or Error Object
  */
 export function deleteComment({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -1020,7 +1018,7 @@ export function deleteComment({
  * @returns {Promise} Response or Error Object
  */
 export function replyComment({
-    url,
+    url = '',
     parent_id,
     comment,
 }) {
@@ -1055,7 +1053,7 @@ export function replyComment({
  * @returns {Promise} Response or Error Object
  */
 export function pullComments({
-    url,
+    url = '',
     parent_id,
     comment,
     page,
@@ -1094,7 +1092,7 @@ export function pullComments({
  * @returns {Promise} Response or Error Object
  */
 export function getLinkedComments({
-    url,
+    url = '',
     id,
     limit,
 }) {
@@ -1123,7 +1121,7 @@ export function getLinkedComments({
  * @returns {Promise} Response or Error Object
  */
 export function likeComment({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -1147,7 +1145,7 @@ export function likeComment({
  * @returns {Promise} Response or Error Object
  */
 export function unlikeComment({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {
@@ -1173,7 +1171,7 @@ export function unlikeComment({
  * @returns {Promise} Response or Error Object
  */
 export function getCommentLikes({
-    url,
+    url = '',
     id,
     page,
     limit,
@@ -1205,7 +1203,7 @@ export function getCommentLikes({
  * @returns {Promise} Response or Error Object
  */
 export function pullAssignedComments({
-    url,
+    url = '',
     id,
     user_id,
 }) {
@@ -1235,7 +1233,7 @@ export function pullAssignedComments({
  * @returns {Promise} Response or Error Object
  */
 export function deleteCommentAssignment({
-    url,
+    url = '',
     id,
 }) {
     return new Promise((resolve) => {

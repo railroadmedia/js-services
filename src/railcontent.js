@@ -38,7 +38,7 @@ export function getContentById({
  */
 export function getContentByIds({
     url,
-    ids,
+    ids = [],
 }) {
     return new Promise((resolve) => {
         axios

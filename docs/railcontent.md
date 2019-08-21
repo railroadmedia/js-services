@@ -85,7 +85,7 @@ Get contents that are child of contentId
 | --- | --- | --- |
 | params | <code>Object</code> | Function parameters |
 | params.url | <code>String</code> | The endpoint url |
-| params.parentID | <code>String</code> \| <code>Number</code> | parentID |
+| params.parentId | <code>String</code> \| <code>Number</code> | The parent content ID |
 
 <a name="module_Railcontent.getContent"></a>
 
@@ -95,18 +95,20 @@ Get an array with contents that respect filter criteria
 **Kind**: static method of [<code>Railcontent</code>](#module_Railcontent)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| params | <code>Object</code> | Function parameters |
-| params.url | <code>String</code> | The endpoint url |
-| params.brand | <code>String</code> | Application brand |
-| params.limit | <code>Number</code> \| <code>String</code> | Maximum amount of results per page |
-| params.page | <code>Number</code> \| <code>String</code> | The page of content to return results for |
-| params.sort | <code>String</code> | The database column to sort results by |
-| params.statuses | <code>Array</code> | Content statuses to filter the results by |
-| params.term | <code>String</code> | A search term to filter the results by |
-| params.included_types | <code>Array</code> | Content types to filter the results by |
-| params.included_fields | <code>Array</code> | Included field types to filter the results by |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>Object</code> |  | Function parameters |
+| params.url | <code>String</code> |  | The endpoint url |
+| params.brand | <code>String</code> |  | Application brand |
+| params.limit | <code>Number</code> \| <code>String</code> | <code>20</code> | Maximum amount of results per page |
+| params.page | <code>Number</code> \| <code>String</code> | <code>1</code> | The page of content to return results for |
+| params.sort | <code>String</code> | <code>-created_on</code> | The database column to sort results by |
+| params.statuses | <code>Array</code> | <code>[&#x27;published&#x27;,</code> | 'scheduled', 'draft'] - Content statuses to filter the results by |
+| params.term | <code>String</code> |  | A search term to filter the results by |
+| params.included_types | <code>Array</code> |  | Content types to filter the results by |
+| params.required_fields | <code>Array</code> |  | Array of key value pairs to filter the results by ex: {key:"difficulty", value:"2"} |
+| params.required_user_states | <code>Array</code> |  | All returned contents are required to have these states for the authenticated user |
+| params.required_user_playlists | <code>Array</code> |  | All returned contents are required to be inside these authenticated users playlists. |
 
 <a name="module_Railcontent.searchContent"></a>
 
@@ -116,13 +118,17 @@ Full text search content
 **Kind**: static method of [<code>Railcontent</code>](#module_Railcontent)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| params | <code>Object</code> | Function parameters |
-| params.url | <code>String</code> | The endpoint url |
-| params.limit | <code>String</code> \| <code>Number</code> | number of contents returned |
-| params.page | <code>String</code> \| <code>Number</code> | page of result set to return |
-| params.term | <code>String</code> | search term |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>Object</code> |  | Function parameters |
+| params.url | <code>String</code> |  | The endpoint url |
+| params.brand | <code>String</code> |  | Contents from the brand will be returned. |
+| params.limit | <code>String</code> \| <code>Number</code> | <code>20</code> | number of contents returned |
+| params.page | <code>String</code> \| <code>Number</code> | <code>1</code> | page of result set to return |
+| params.term | <code>String</code> |  | search term |
+| params.included_types | <code>Array</code> |  | Contents with these types will be returned |
+| params.statuses | <code>Array</code> | <code>[&#x27;published&#x27;,</code> | 'scheduled', 'draft'] - All content must have one of these statuses. |
+| params.sort | <code>String</code> | <code>-score</code> | Key to sort the results by. Can be any of the following: `score` or `content_published_on` |
 
 <a name="module_Railcontent.storeContent"></a>
 
@@ -132,13 +138,15 @@ Create a new content based on request data
 **Kind**: static method of [<code>Railcontent</code>](#module_Railcontent)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| params | <code>Object</code> | Function parameters |
-| params.url | <code>String</code> | The endpoint url |
-| params.slug | <code>String</code> | slug of content |
-| params.type | <code>String</code> | type of content |
-| params.status | <code>String</code> | status |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>Object</code> |  | Function parameters |
+| params.url | <code>String</code> |  | The endpoint url |
+| params.slug | <code>String</code> |  | slug of content |
+| params.type | <code>String</code> |  | type of content |
+| params.status | <code>String</code> | <code>draft</code> | status |
+| params.brand | <code>String</code> |  | The brand to create content for |
+| params.parent_id | <code>String</code> |  | The parent ID you wish to create a content child for |
 
 <a name="module_Railcontent.patchContent"></a>
 
@@ -152,8 +160,12 @@ Update a content with request data
 | --- | --- | --- |
 | params | <code>Object</code> | Function parameters |
 | params.url | <code>String</code> | The endpoint url |
-| params.slug | <code>String</code> | slug of content |
-| params.status | <code>String</code> | status |
+| params.brand | <code>String</code> | New content brand |
+| params.slug | <code>String</code> | New slug of the content |
+| params.status | <code>String</code> | New status. Can be 'draft' 'published' 'archived' |
+| params.type | <code>String</code> | The new content type |
+| params.published_on | <code>String</code> | The new published on date |
+| params.parent_id | <code>String</code> | The parent ID you wish to attach this content to |
 
 <a name="module_Railcontent.deleteContent"></a>
 
@@ -228,6 +240,7 @@ Delete content field if exists in the database
 | --- | --- | --- |
 | params | <code>Object</code> | Function parameters |
 | params.url | <code>String</code> | The endpoint url |
+| params.token | <code>String</code> | The endpoint url |
 | params.fieldId | <code>String</code> \| <code>Number</code> | integer id of content |
 
 <a name="module_Railcontent.getContentField"></a>

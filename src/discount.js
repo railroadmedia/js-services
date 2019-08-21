@@ -24,7 +24,7 @@ export function getDiscounts({
 }) {
     return new Promise((resolve) => {
         axios
-            .get(`${url}/ecommerce/address`, {
+            .get(`${url}/ecommerce/discounts`, {
                 params: {
                     order_by_column,
                     order_by_direction,
@@ -56,7 +56,7 @@ export function discountIds({
 }) {
     return new Promise((resolve) => {
         axios
-            .get(`${url}/discounts/${discount_id}`)
+            .get(`${url}/ecommerce/discounts/${discount_id}`)
             .then((response) => {
                 resolve({ response });
             })

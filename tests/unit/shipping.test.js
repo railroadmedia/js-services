@@ -15,33 +15,33 @@ describe('shipping', () => {
     beforeEach(() => {
         // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
-            .get(/shipping/)
+            .get(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .put(/shipping/)
+            .put(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .patch(/shipping/)
+            .patch(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .delete(/shipping/)
+            .delete(/ecommerce/)
             .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
-            .get(/shipping/)
+            .get(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .put(/shipping/)
+            .put(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .patch(/shipping/)
+            .patch(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .delete(/shipping/)
+            .delete(/ecommerce/)
             .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
-            .get(/shipping/)
+            .get(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .put(/shipping/)
+            .put(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .patch(/shipping/)
+            .patch(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .delete(/shipping/)
+            .delete(/ecommerce/)
             .reply(500, CODE_500_RESPONSE);
     });
 

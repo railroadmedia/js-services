@@ -71,7 +71,7 @@ export function getOrderID({
 }) {
     return new Promise((resolve) => {
         axios
-            .get(`${url}/orders/${order_id}`)
+            .get(`${url}/ecommerce/orders/${order_id}`)
             .then((response) => {
                 resolve({ response });
             })

@@ -15,33 +15,33 @@ describe('payment-method', () => {
     beforeEach(() => {
         // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
-            .get(/payment-method/)
+            .get(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .put(/payment-method/)
+            .put(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .patch(/payment-method/)
+            .patch(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .delete(/payment-method/)
+            .delete(/ecommerce/)
             .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
-            .get(/payment-method/)
+            .get(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .put(/payment-method/)
+            .put(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .patch(/payment-method/)
+            .patch(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .delete(/payment-method/)
+            .delete(/ecommerce/)
             .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
-            .get(/payment-method/)
+            .get(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .put(/payment-method/)
+            .put(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .patch(/payment-method/)
+            .patch(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .delete(/payment-method/)
+            .delete(/ecommerce/)
             .reply(500, CODE_500_RESPONSE);
     });
 

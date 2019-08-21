@@ -15,33 +15,33 @@ describe('cart', () => {
     beforeEach(() => {
         // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
-            .get(/cart/)
+            .get(/json/)
             .reply(200, CODE_200_RESPONSE)
-            .put(/cart/)
+            .put(/json/)
             .reply(200, CODE_200_RESPONSE)
-            .patch(/cart/)
+            .patch(/json/)
             .reply(200, CODE_200_RESPONSE)
-            .delete(/cart/)
+            .delete(/json/)
             .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
-            .get(/cart/)
+            .get(/json/)
             .reply(400, CODE_400_RESPONSE)
-            .put(/cart/)
+            .put(/json/)
             .reply(400, CODE_400_RESPONSE)
-            .patch(/cart/)
+            .patch(/json/)
             .reply(400, CODE_400_RESPONSE)
-            .delete(/cart/)
+            .delete(/json/)
             .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
-            .get(/cart/)
+            .get(/json/)
             .reply(500, CODE_500_RESPONSE)
-            .put(/cart/)
+            .put(/json/)
             .reply(500, CODE_500_RESPONSE)
-            .patch(/cart/)
+            .patch(/json/)
             .reply(500, CODE_500_RESPONSE)
-            .delete(/cart/)
+            .delete(/json/)
             .reply(500, CODE_500_RESPONSE);
     });
 

@@ -1,6 +1,6 @@
 {
   "name": "@musora/services",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "HTTP request modules for all Musora back-end services",
   "main": "index.js",
   "type": "module",
@@ -19,7 +19,6 @@
   "dependencies": {
     "axios": "^0.19.0"
   },
-  "private": false,
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",

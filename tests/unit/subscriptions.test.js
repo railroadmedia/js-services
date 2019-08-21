@@ -6,39 +6,48 @@ import * as Subscriptions from '../../src/subscriptions';
 const CODE_200_ENDPOINT = 'https://200response.com';
 const CODE_400_ENDPOINT = 'https://400response.com';
 const CODE_500_ENDPOINT = 'https://500response.com';
+const CODE_200_RESPONSE = { results: 'success' };
+const CODE_400_RESPONSE = { detail: 'error' };
+const CODE_500_RESPONSE = { detail: 'error' };
 
 describe('subscriptions', () => {
     // Before every test we need to create mocks for the endpoint
     beforeEach(() => {
         // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
-            .get(/subscriptions/)
+            .get(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .put(/subscriptions/)
+            .put(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .patch(/subscriptions/)
+            .patch(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .delete(/subscriptions/)
+            .post(/ecommerce/)
+            .reply(200, CODE_200_RESPONSE)
+            .delete(/ecommerce/)
             .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
-            .get(/subscriptions/)
+            .get(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .put(/subscriptions/)
+            .put(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .patch(/subscriptions/)
+            .patch(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .delete(/subscriptions/)
+            .post(/ecommerce/)
+            .reply(400, CODE_400_RESPONSE)
+            .delete(/ecommerce/)
             .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
-            .get(/subscriptions/)
+            .get(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .put(/subscriptions/)
+            .put(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .patch(/subscriptions/)
+            .patch(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .delete(/subscriptions/)
+            .post(/ecommerce/)
+            .reply(500, CODE_400_RESPONSE)
+            .delete(/ecommerce/)
             .reply(500, CODE_500_RESPONSE);
     });
 

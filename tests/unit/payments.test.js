@@ -1,44 +1,47 @@
 const nock = require('nock');
 
-import * as Payments from '../../src/paymenst';
+import * as Payments from '../../src/payments';
 
 // Stub the API to return hardcoded data at specific endpoints
 const CODE_200_ENDPOINT = 'https://200response.com';
 const CODE_400_ENDPOINT = 'https://400response.com';
 const CODE_500_ENDPOINT = 'https://500response.com';
+const CODE_200_RESPONSE = { results: 'success' };
+const CODE_400_RESPONSE = { detail: 'error' };
+const CODE_500_RESPONSE = { detail: 'error' };
 
 describe('payment', () => {
     // Before every test we need to create mocks for the endpoint
     beforeEach(() => {
         // Mock a successful 2xx GET request
         nock(CODE_200_ENDPOINT)
-            .get(/payments/)
+            .get(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .put(/payments/)
+            .put(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .patch(/payments/)
+            .patch(/ecommerce/)
             .reply(200, CODE_200_RESPONSE)
-            .delete(/payments/)
+            .delete(/ecommerce/)
             .reply(200, CODE_200_RESPONSE);
         // Mock a failed 4xx request
         nock(CODE_400_ENDPOINT)
-            .get(/payments/)
+            .get(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .put(/payments/)
+            .put(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .patch(/payments/)
+            .patch(/ecommerce/)
             .reply(400, CODE_400_RESPONSE)
-            .delete(/payments/)
+            .delete(/ecommerce/)
             .reply(400, CODE_400_RESPONSE);
         // Mock a failed 5xx request
         nock(CODE_500_ENDPOINT)
-            .get(/payments/)
+            .get(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .put(/payments/)
+            .put(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .patch(/payments/)
+            .patch(/ecommerce/)
             .reply(500, CODE_500_RESPONSE)
-            .delete(/payments/)
+            .delete(/ecommerce/)
             .reply(500, CODE_500_RESPONSE);
     });
 

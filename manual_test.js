@@ -1,4 +1,4 @@
-import { getContent } from './src/railcontent';
+import { putPayment } from './src/payments';
 import { configure } from './index';
 
 (async function init() {
@@ -6,9 +6,8 @@ import { configure } from './index';
         baseURL: 'https://staging.musora.com',
     });
 
-    const { response, error } = await getContent({
-        brand: 'pianote',
-        included_types: ['course'],
+    const { response, error } = await putPayment({
+
     });
 
     if (error) {

@@ -176,11 +176,11 @@ export function putSubscriptions({
  */
 export function postSubscriptions({
     url,
-    Subscription_id,
+    subscription_id,
 }) {
     return new Promise((resolve) => {
         axios
-            .post(`${url}/ecommerce/subscription-renew/${Subscription_id}`)
+            .post(`${url}/ecommerce/subscription-renew/${subscription_id}`)
             .then((response) => {
                 resolve({ response });
             })
@@ -200,11 +200,11 @@ export function postSubscriptions({
  */
 export function deleteSubscriptions({
     url,
-    Subscription_id,
+    subscription_id,
 }) {
     return new Promise((resolve) => {
         axios
-            .delete(`${url}/ecommerce/subscription-renew/${Subscription_id}`)
+            .delete(`${url}/ecommerce/subscription-renew/${subscription_id}`)
             .then((response) => {
                 resolve({ response });
             })

@@ -6,6 +6,9 @@ import * as Discount from '../../src/discount';
 const CODE_200_ENDPOINT = 'https://200response.com';
 const CODE_400_ENDPOINT = 'https://400response.com';
 const CODE_500_ENDPOINT = 'https://500response.com';
+const CODE_200_RESPONSE = { results: 'success' };
+const CODE_400_RESPONSE = { detail: 'error' };
+const CODE_500_RESPONSE = { detail: 'error' };
 
 describe('discount', () => {
     // Before every test we need to create mocks for the endpoint

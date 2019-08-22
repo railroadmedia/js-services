@@ -21,11 +21,15 @@ import User_products from './src/user-products';
  *
  * @param {Object} params - Function parameters
  * @param {String} params.baseURL - The base url to send all requests to
+ * @param {String} params.contentType - The content type of your request
+ * @param {String} params.accept - The data format that you will accept in the response
  * @param {String|Number} params.authToken - Your JWT token received from signing in
  */
 export function configure({
     baseURL,
     authToken,
+    contentType,
+    accept,
 }) {
     if (baseURL) {
         axios.defaults.baseURL = baseURL;
@@ -34,7 +38,16 @@ export function configure({
     if (authToken) {
         axios.defaults.headers.Authorization = `Bearer ${authToken}`;
     }
+
+    if (contentType) {
+        axios.defaults.headers['Content-Type'] = contentType;
+    }
+
+    if (accept) {
+        axios.defaults.headers.Accept = accept;
+    }
 }
+
 
 // Export every function individually
 export * from './src/access-codes';

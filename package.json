@@ -1,6 +1,6 @@
 {
   "name": "@musora/services",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HTTP request modules for all Musora back-end services",
   "main": "index.js",
   "type": "module",

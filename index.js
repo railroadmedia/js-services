@@ -1,7 +1,6 @@
 /** @module Services */
 
 import axios from 'axios';
-
 import Access_codes from './src/access-codes';
 import Cart from './src/cart';
 import Daily_statistics from './src/daily-statistics';
@@ -11,9 +10,10 @@ import Order from './src/order';
 import Payment_method from './src/payment-method';
 import Payments from './src/payments';
 import Products from './src/products';
-import Railcontent from './src/railcontent';
+import Railcontent from './src/Railcontent';
 import Shipping from './src/shipping';
 import Subscriptions from './src/subscriptions';
+import User_login from './src/user-login';
 import User_products from './src/user-products';
 
 /**
@@ -48,7 +48,6 @@ export function configure({
     }
 }
 
-
 // Export every function individually
 export * from './src/access-codes';
 export * from './src/cart';
@@ -59,9 +58,10 @@ export * from './src/order';
 export * from './src/payment-method';
 export * from './src/payments';
 export * from './src/products';
-export * from './src/railcontent';
+export * from './src/Railcontent';
 export * from './src/shipping';
 export * from './src/subscriptions';
+export * from './src/user-login';
 export * from './src/user-products';
 
 // Export every module individually
@@ -78,6 +78,7 @@ export {
     Railcontent,
     Shipping,
     Subscriptions,
+    User_login,
     User_products,
 };
 
@@ -95,5 +96,6 @@ export default {
     Railcontent,
     Shipping,
     Subscriptions,
+    User_login,
     User_products,
 };

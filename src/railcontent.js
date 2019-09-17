@@ -7,6 +7,30 @@ import axios from 'axios';
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
+ * @param {String|Number} params.vimeoId - Content ID
+ * @returns {Promise} Response or Error Object
+ */
+export function getVimeoUrlByVimeoId({ 
+    url, 
+    vimeoId,
+}) {
+    return new Promise((resolve) => {
+        axios
+            .get(`${url}/railcontent/vimeo-video/${vimeoId}`)
+            .then((response) => {
+                resolve({ response });
+            })
+            .catch((error) => {
+                resolve({ error });
+            });
+    });    
+}
+
+/**
+ * Get content data based on content id
+ *
+ * @param {Object} params - Function parameters
+ * @param {String} params.url - The endpoint url
  * @param {String|Number} params.id - Content ID
  * @returns {Promise} Response or Error Object
  */
@@ -1249,6 +1273,7 @@ export function deleteCommentAssignment({
 }
 
 const Railcontent = {
+    getVimeoUrlByVimeoId,
     getContent,
     getContentById,
     getContentByIds,

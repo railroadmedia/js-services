@@ -65,7 +65,7 @@ export * from './src/user-login';
 export * from './src/user-products';
 
 // Export every module individually
-export {
+const Services = {
     Access_codes,
     Cart,
     Daily_statistics,
@@ -83,19 +83,4 @@ export {
 };
 
 // Create Services object to export as default
-export default {
-    Access_codes,
-    Cart,
-    Daily_statistics,
-    Discount_criteria,
-    Discount,
-    Order,
-    Payment_method,
-    Payments,
-    Products, 
-    Railcontent,
-    Shipping,
-    Subscriptions,
-    User_login,
-    User_products,
-};
+export default Services;

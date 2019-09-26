@@ -11,7 +11,7 @@ import axios from 'axios';
  * @returns {Promise} Response or Error Object
  */
 export function getVimeoUrlByVimeoId({ 
-    url, 
+    url = '', 
     vimeoId,
 }) {
     return new Promise((resolve) => {

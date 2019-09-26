@@ -14,7 +14,7 @@ import axios from 'axios';
  * @returns {Promise} Response or Error Object
  */
 export function userLogin({
-    url,
+    url = '',
     email,
     password,
 }) {
@@ -43,7 +43,7 @@ export function userLogin({
  * @returns {Promise} Response or Error Object
  */
 export function userLogout({
-    url,
+    url = '',
 }) {
     return new Promise((resolve) => {
         axios
@@ -66,7 +66,7 @@ export function userLogout({
  * @returns {Promise} Response or Error Object
  */
 export function userForgotPassword({
-    url,
+    url = '',
     email, 
 }) {
     return new Promise((resolve) => {
@@ -94,7 +94,7 @@ export function userForgotPassword({
  * @returns {Promise} Response or Error Object
  */
 export function userUpdate({
-    url,
+    url = '',
 }) {
     return new Promise((resolve) => {
         axios

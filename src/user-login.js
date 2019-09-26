@@ -21,7 +21,7 @@ export function userLogin({
     return new Promise((resolve) => {
         axios
             .put(`${url}/usora/api/login`, {
-                data: {
+                params: {
                     email,
                     password,
                 },

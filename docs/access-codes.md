@@ -1,18 +1,18 @@
-<a name="module_Access_codes"></a>
+<a name="module_AccessCodes"></a>
 
-## Access\_codes
+## AccessCodes
 
-* [Access_codes](#module_Access_codes)
-    * [.redeemAccessCodes(params)](#module_Access_codes.redeemAccessCodes) ⇒ <code>Promise</code>
-    * [.getAccessCodes(params)](#module_Access_codes.getAccessCodes) ⇒ <code>Promise</code>
-    * [.getAccessCodesSearch(params)](#module_Access_codes.getAccessCodesSearch) ⇒ <code>Promise</code>
+* [AccessCodes](#module_AccessCodes)
+    * [.redeemAccessCodes(params)](#module_AccessCodes.redeemAccessCodes) ⇒ <code>Promise</code>
+    * [.getAccessCodes(params)](#module_AccessCodes.getAccessCodes) ⇒ <code>Promise</code>
+    * [.getAccessCodesSearch(params)](#module_AccessCodes.getAccessCodesSearch) ⇒ <code>Promise</code>
 
-<a name="module_Access_codes.redeemAccessCodes"></a>
+<a name="module_AccessCodes.redeemAccessCodes"></a>
 
-### Access_codes.redeemAccessCodes(params) ⇒ <code>Promise</code>
+### AccessCodes.redeemAccessCodes(params) ⇒ <code>Promise</code>
 Used to claim an action code for an existing or new user
 
-**Kind**: static method of [<code>Access\_codes</code>](#module_Access_codes)  
+**Kind**: static method of [<code>AccessCodes</code>](#module_AccessCodes)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -25,12 +25,12 @@ Used to claim an action code for an existing or new user
 | params.password_confirmation | <code>String</code> | Confirm password |
 | params.redirect | <code>String</code> | Where to redirect after the request is processed |
 
-<a name="module_Access_codes.getAccessCodes"></a>
+<a name="module_AccessCodes.getAccessCodes"></a>
 
-### Access_codes.getAccessCodes(params) ⇒ <code>Promise</code>
+### AccessCodes.getAccessCodes(params) ⇒ <code>Promise</code>
 List access codes
 
-**Kind**: static method of [<code>Access\_codes</code>](#module_Access_codes)  
+**Kind**: static method of [<code>AccessCodes</code>](#module_AccessCodes)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -43,12 +43,12 @@ List access codes
 | params.limit | <code>String</code> \| <code>number</code> | How many to load per page |
 | params.brands | <code>Array</code> | Limit results to codes that belong to specific brands |
 
-<a name="module_Access_codes.getAccessCodesSearch"></a>
+<a name="module_AccessCodes.getAccessCodesSearch"></a>
 
-### Access_codes.getAccessCodesSearch(params) ⇒ <code>Promise</code>
+### AccessCodes.getAccessCodesSearch(params) ⇒ <code>Promise</code>
 Search for access codes based on any part of the code
 
-**Kind**: static method of [<code>Access\_codes</code>](#module_Access_codes)  
+**Kind**: static method of [<code>AccessCodes</code>](#module_AccessCodes)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

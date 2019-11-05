@@ -1,18 +1,18 @@
-<a name="module_Discount_criteria"></a>
+<a name="module_DiscountCriteria"></a>
 
-## Discount\_criteria
+## DiscountCriteria
 
-* [Discount_criteria](#module_Discount_criteria)
-    * [.putDiscountCriteria(params)](#module_Discount_criteria.putDiscountCriteria) ⇒ <code>Promise</code>
-    * [.patchDiscountCriteria(params)](#module_Discount_criteria.patchDiscountCriteria) ⇒ <code>Promise</code>
-    * [.deleteDiscountCriteria(params)](#module_Discount_criteria.deleteDiscountCriteria) ⇒ <code>Promise</code>
+* [DiscountCriteria](#module_DiscountCriteria)
+    * [.putDiscountCriteria(params)](#module_DiscountCriteria.putDiscountCriteria) ⇒ <code>Promise</code>
+    * [.patchDiscountCriteria(params)](#module_DiscountCriteria.patchDiscountCriteria) ⇒ <code>Promise</code>
+    * [.deleteDiscountCriteria(params)](#module_DiscountCriteria.deleteDiscountCriteria) ⇒ <code>Promise</code>
 
-<a name="module_Discount_criteria.putDiscountCriteria"></a>
+<a name="module_DiscountCriteria.putDiscountCriteria"></a>
 
-### Discount_criteria.putDiscountCriteria(params) ⇒ <code>Promise</code>
+### DiscountCriteria.putDiscountCriteria(params) ⇒ <code>Promise</code>
 Create a new discount criteria for a discount
 
-**Kind**: static method of [<code>Discount\_criteria</code>](#module_Discount_criteria)  
+**Kind**: static method of [<code>DiscountCriteria</code>](#module_DiscountCriteria)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -29,12 +29,12 @@ Create a new discount criteria for a discount
 | params.type | <code>String</code> | type |
 | params.id | <code>String</code> \| <code>Number</code> | id |
 
-<a name="module_Discount_criteria.patchDiscountCriteria"></a>
+<a name="module_DiscountCriteria.patchDiscountCriteria"></a>
 
-### Discount_criteria.patchDiscountCriteria(params) ⇒ <code>Promise</code>
+### DiscountCriteria.patchDiscountCriteria(params) ⇒ <code>Promise</code>
 Update an existing discount criteria
 
-**Kind**: static method of [<code>Discount\_criteria</code>](#module_Discount_criteria)  
+**Kind**: static method of [<code>DiscountCriteria</code>](#module_DiscountCriteria)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -46,12 +46,12 @@ Update an existing discount criteria
 | params.max | <code>String</code> \| <code>Number</code> | to be set depending on the type |
 | params.id | <code>String</code> \| <code>Number</code> | id |
 
-<a name="module_Discount_criteria.deleteDiscountCriteria"></a>
+<a name="module_DiscountCriteria.deleteDiscountCriteria"></a>
 
-### Discount_criteria.deleteDiscountCriteria(params) ⇒ <code>Promise</code>
+### DiscountCriteria.deleteDiscountCriteria(params) ⇒ <code>Promise</code>
 Delete an existing discount criteria
 
-**Kind**: static method of [<code>Discount\_criteria</code>](#module_Discount_criteria)  
+**Kind**: static method of [<code>DiscountCriteria</code>](#module_DiscountCriteria)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

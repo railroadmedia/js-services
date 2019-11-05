@@ -1,19 +1,19 @@
-<a name="module_User_login"></a>
+<a name="module_UserLogin"></a>
 
-## User\_login
+## UserLogin
 
-* [User_login](#module_User_login)
-    * [.userLogin(params)](#module_User_login.userLogin) ⇒ <code>Promise</code>
-    * [.userLogout(params)](#module_User_login.userLogout) ⇒ <code>Promise</code>
-    * [.userForgotPassword(params)](#module_User_login.userForgotPassword) ⇒ <code>Promise</code>
-    * [.userUpdate(params)](#module_User_login.userUpdate) ⇒ <code>Promise</code>
+* [UserLogin](#module_UserLogin)
+    * [.userLogin(params)](#module_UserLogin.userLogin) ⇒ <code>Promise</code>
+    * [.userLogout(params)](#module_UserLogin.userLogout) ⇒ <code>Promise</code>
+    * [.userForgotPassword(params)](#module_UserLogin.userForgotPassword) ⇒ <code>Promise</code>
+    * [.userUpdate(params)](#module_UserLogin.userUpdate) ⇒ <code>Promise</code>
 
-<a name="module_User_login.userLogin"></a>
+<a name="module_UserLogin.userLogin"></a>
 
-### User_login.userLogin(params) ⇒ <code>Promise</code>
+### UserLogin.userLogin(params) ⇒ <code>Promise</code>
 User logs in
 
-**Kind**: static method of [<code>User\_login</code>](#module_User_login)  
+**Kind**: static method of [<code>UserLogin</code>](#module_UserLogin)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -23,12 +23,12 @@ User logs in
 | params.email | <code>String</code> | User email |
 | params.password | <code>String</code> | User password |
 
-<a name="module_User_login.userLogout"></a>
+<a name="module_UserLogin.userLogout"></a>
 
-### User_login.userLogout(params) ⇒ <code>Promise</code>
+### UserLogin.userLogout(params) ⇒ <code>Promise</code>
 User logs out
 
-**Kind**: static method of [<code>User\_login</code>](#module_User_login)  
+**Kind**: static method of [<code>UserLogin</code>](#module_UserLogin)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -36,12 +36,12 @@ User logs out
 | params | <code>Object</code> | Function parameters |
 | params.url | <code>String</code> | The endpoint url |
 
-<a name="module_User_login.userForgotPassword"></a>
+<a name="module_UserLogin.userForgotPassword"></a>
 
-### User_login.userForgotPassword(params) ⇒ <code>Promise</code>
+### UserLogin.userForgotPassword(params) ⇒ <code>Promise</code>
 User forgot password
 
-**Kind**: static method of [<code>User\_login</code>](#module_User_login)  
+**Kind**: static method of [<code>UserLogin</code>](#module_UserLogin)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -50,12 +50,12 @@ User forgot password
 | params.url | <code>String</code> | The endpoint url |
 | params.email | <code>String</code> | The user's email |
 
-<a name="module_User_login.userUpdate"></a>
+<a name="module_UserLogin.userUpdate"></a>
 
-### User_login.userUpdate(params) ⇒ <code>Promise</code>
+### UserLogin.userUpdate(params) ⇒ <code>Promise</code>
 Update profile
 
-**Kind**: static method of [<code>User\_login</code>](#module_User_login)  
+**Kind**: static method of [<code>UserLogin</code>](#module_UserLogin)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

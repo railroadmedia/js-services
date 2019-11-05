@@ -1,19 +1,19 @@
-<a name="module_User_products"></a>
+<a name="module_UserProducts"></a>
 
-## User\_products
+## UserProducts
 
-* [User_products](#module_User_products)
-    * [.getUserProducts(params)](#module_User_products.getUserProducts) ⇒ <code>Promise</code>
-    * [.putUserProduct(params)](#module_User_products.putUserProduct) ⇒ <code>Promise</code>
-    * [.patchUserProduct(params)](#module_User_products.patchUserProduct) ⇒ <code>Promise</code>
-    * [.deleteUserProduct(params)](#module_User_products.deleteUserProduct) ⇒ <code>Promise</code>
+* [UserProducts](#module_UserProducts)
+    * [.getUserProducts(params)](#module_UserProducts.getUserProducts) ⇒ <code>Promise</code>
+    * [.putUserProduct(params)](#module_UserProducts.putUserProduct) ⇒ <code>Promise</code>
+    * [.patchUserProduct(params)](#module_UserProducts.patchUserProduct) ⇒ <code>Promise</code>
+    * [.deleteUserProduct(params)](#module_UserProducts.deleteUserProduct) ⇒ <code>Promise</code>
 
-<a name="module_User_products.getUserProducts"></a>
+<a name="module_UserProducts.getUserProducts"></a>
 
-### User_products.getUserProducts(params) ⇒ <code>Promise</code>
+### UserProducts.getUserProducts(params) ⇒ <code>Promise</code>
 List user products
 
-**Kind**: static method of [<code>User\_products</code>](#module_User_products)  
+**Kind**: static method of [<code>UserProducts</code>](#module_UserProducts)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -27,12 +27,12 @@ List user products
 | params.page | <code>String</code> | page number |
 | params.limit | <code>String</code> | number to pull per page |
 
-<a name="module_User_products.putUserProduct"></a>
+<a name="module_UserProducts.putUserProduct"></a>
 
-### User_products.putUserProduct(params) ⇒ <code>Promise</code>
+### UserProducts.putUserProduct(params) ⇒ <code>Promise</code>
 Create a new user products
 
-**Kind**: static method of [<code>User\_products</code>](#module_User_products)  
+**Kind**: static method of [<code>UserProducts</code>](#module_UserProducts)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -44,12 +44,12 @@ Create a new user products
 | params.user_id | <code>String</code> | user ID |
 | params.product_id | <code>String</code> | product ID |
 
-<a name="module_User_products.patchUserProduct"></a>
+<a name="module_UserProducts.patchUserProduct"></a>
 
-### User_products.patchUserProduct(params) ⇒ <code>Promise</code>
+### UserProducts.patchUserProduct(params) ⇒ <code>Promise</code>
 Update a user products
 
-**Kind**: static method of [<code>User\_products</code>](#module_User_products)  
+**Kind**: static method of [<code>UserProducts</code>](#module_UserProducts)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -59,12 +59,12 @@ Update a user products
 | params.quantity | <code>String</code> | product quantity |
 | params.product_id | <code>String</code> | product ID |
 
-<a name="module_User_products.deleteUserProduct"></a>
+<a name="module_UserProducts.deleteUserProduct"></a>
 
-### User_products.deleteUserProduct(params) ⇒ <code>Promise</code>
+### UserProducts.deleteUserProduct(params) ⇒ <code>Promise</code>
 Delete an existing user product
 
-**Kind**: static method of [<code>User\_products</code>](#module_User_products)  
+**Kind**: static method of [<code>UserProducts</code>](#module_UserProducts)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

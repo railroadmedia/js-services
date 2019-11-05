@@ -3,6 +3,7 @@
 ## Railcontent
 
 * [Railcontent](#module_Railcontent)
+    * [.getVimeoUrlByVimeoId(params)](#module_Railcontent.getVimeoUrlByVimeoId) ⇒ <code>Promise</code>
     * [.getContentById(params)](#module_Railcontent.getContentById) ⇒ <code>Promise</code>
     * [.getContentByIds(params)](#module_Railcontent.getContentByIds) ⇒ <code>Promise</code>
     * [.getContentChildById(params)](#module_Railcontent.getContentChildById) ⇒ <code>Promise</code>
@@ -44,6 +45,20 @@
     * [.getCommentLikes(params)](#module_Railcontent.getCommentLikes) ⇒ <code>Promise</code>
     * [.pullAssignedComments(params)](#module_Railcontent.pullAssignedComments) ⇒ <code>Promise</code>
     * [.deleteCommentAssignment(params)](#module_Railcontent.deleteCommentAssignment) ⇒ <code>Promise</code>
+
+<a name="module_Railcontent.getVimeoUrlByVimeoId"></a>
+
+### Railcontent.getVimeoUrlByVimeoId(params) ⇒ <code>Promise</code>
+Get content data based on content id
+
+**Kind**: static method of [<code>Railcontent</code>](#module_Railcontent)  
+**Returns**: <code>Promise</code> - Response or Error Object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| params | <code>Object</code> | Function parameters |
+| params.url | <code>String</code> | The endpoint url |
+| params.vimeoId | <code>String</code> \| <code>Number</code> | Content ID |
 
 <a name="module_Railcontent.getContentById"></a>
 

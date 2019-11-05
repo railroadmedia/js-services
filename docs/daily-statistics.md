@@ -1,12 +1,12 @@
-<a name="module_Daily_statistics"></a>
+<a name="module_DailyStatistics"></a>
 
-## Daily\_statistics
-<a name="module_Daily_statistics.dailyStatistics"></a>
+## DailyStatistics
+<a name="module_DailyStatistics.dailyStatistics"></a>
 
-### Daily_statistics.dailyStatistics(params) ⇒ <code>Promise</code>
+### DailyStatistics.dailyStatistics(params) ⇒ <code>Promise</code>
 List daily products
 
-**Kind**: static method of [<code>Daily\_statistics</code>](#module_Daily_statistics)  
+**Kind**: static method of [<code>DailyStatistics</code>](#module_DailyStatistics)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

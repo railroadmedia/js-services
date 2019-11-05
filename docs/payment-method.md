@@ -1,19 +1,19 @@
-<a name="module_Payment_method"></a>
+<a name="module_PaymentMethods"></a>
 
-## Payment\_method
+## PaymentMethods
 
-* [Payment_method](#module_Payment_method)
-    * [.getPaymentMethod(params)](#module_Payment_method.getPaymentMethod) ⇒ <code>Promise</code>
-    * [.putPaymentMethod(params)](#module_Payment_method.putPaymentMethod) ⇒ <code>Promise</code>
-    * [.patchPaymentMethod(params)](#module_Payment_method.patchPaymentMethod) ⇒ <code>Promise</code>
-    * [.deletePaymentMethod(params)](#module_Payment_method.deletePaymentMethod) ⇒ <code>Promise</code>
+* [PaymentMethods](#module_PaymentMethods)
+    * [.getPaymentMethod(params)](#module_PaymentMethods.getPaymentMethod) ⇒ <code>Promise</code>
+    * [.putPaymentMethod(params)](#module_PaymentMethods.putPaymentMethod) ⇒ <code>Promise</code>
+    * [.patchPaymentMethod(params)](#module_PaymentMethods.patchPaymentMethod) ⇒ <code>Promise</code>
+    * [.deletePaymentMethod(params)](#module_PaymentMethods.deletePaymentMethod) ⇒ <code>Promise</code>
 
-<a name="module_Payment_method.getPaymentMethod"></a>
+<a name="module_PaymentMethods.getPaymentMethod"></a>
 
-### Payment_method.getPaymentMethod(params) ⇒ <code>Promise</code>
+### PaymentMethods.getPaymentMethod(params) ⇒ <code>Promise</code>
 List users payment methods
 
-**Kind**: static method of [<code>Payment\_method</code>](#module_Payment_method)  
+**Kind**: static method of [<code>PaymentMethods</code>](#module_PaymentMethods)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -23,12 +23,12 @@ List users payment methods
 | params.user_id | <code>String</code> | user's ID |
 | params.view_deleted | <code>String</code> | requires 'show_deleted' permission |
 
-<a name="module_Payment_method.putPaymentMethod"></a>
+<a name="module_PaymentMethods.putPaymentMethod"></a>
 
-### Payment_method.putPaymentMethod(params) ⇒ <code>Promise</code>
+### PaymentMethods.putPaymentMethod(params) ⇒ <code>Promise</code>
 Create a new payment method
 
-**Kind**: static method of [<code>Payment\_method</code>](#module_Payment_method)  
+**Kind**: static method of [<code>PaymentMethods</code>](#module_PaymentMethods)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -43,12 +43,12 @@ Create a new payment method
 | params.customer_id | <code>String</code> | customer |
 | params.currency | <code>String</code> | currency |
 
-<a name="module_Payment_method.patchPaymentMethod"></a>
+<a name="module_PaymentMethods.patchPaymentMethod"></a>
 
-### Payment_method.patchPaymentMethod(params) ⇒ <code>Promise</code>
+### PaymentMethods.patchPaymentMethod(params) ⇒ <code>Promise</code>
 Update an existing payment method
 
-**Kind**: static method of [<code>Payment\_method</code>](#module_Payment_method)  
+**Kind**: static method of [<code>PaymentMethods</code>](#module_PaymentMethods)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |
@@ -63,12 +63,12 @@ Update an existing payment method
 | params.tegion | <code>String</code> | region |
 | params.currency | <code>String</code> | currency |
 
-<a name="module_Payment_method.deletePaymentMethod"></a>
+<a name="module_PaymentMethods.deletePaymentMethod"></a>
 
-### Payment_method.deletePaymentMethod(params) ⇒ <code>Promise</code>
+### PaymentMethods.deletePaymentMethod(params) ⇒ <code>Promise</code>
 Delete an existing payment method
 
-**Kind**: static method of [<code>Payment\_method</code>](#module_Payment_method)  
+**Kind**: static method of [<code>PaymentMethods</code>](#module_PaymentMethods)  
 **Returns**: <code>Promise</code> - Response or Error Object  
 
 | Param | Type | Description |

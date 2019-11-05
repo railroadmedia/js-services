@@ -37,6 +37,18 @@ import { getContent } from '@musora/services';
 getContent(...);
 ```
 
+## Configure the Instance
+```javascript
+import { configure } from '@musora/services';
+
+configure({
+    baseUrl: 'https://drumeo.com/laravel/public',
+    contentType: 'application/json',
+    accept: 'application/json',
+    authToken: '...'
+});
+```
+
 ## Local Development
 
 - `yarn test` - Run all tests

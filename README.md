@@ -14,6 +14,22 @@ HTTP request modules for all Musora back-end services
 
 ## Usage
 
+### Configure the Instance
+
+When your app starts up, you can call the `configue` method below to configure your current
+request instance with some defaults, like the base url and the users authentication token.
+
+```javascript
+import { configure } from '@musora/services';
+
+configure({
+    baseUrl: 'https://drumeo.com/laravel/public',
+    contentType: 'application/json',
+    accept: 'application/json',
+    authToken: '...'
+});
+```
+
 ### Entire Module
 ```javascript
 import Services from '@musora/services';
@@ -33,18 +49,6 @@ Railcontent.getContent(...);
 import { getContent } from '@musora/services';
 
 getContent(...);
-```
-
-## Configure the Instance
-```javascript
-import { configure } from '@musora/services';
-
-configure({
-    baseUrl: 'https://drumeo.com/laravel/public',
-    contentType: 'application/json',
-    accept: 'application/json',
-    authToken: '...'
-});
 ```
 
 ## Local Development

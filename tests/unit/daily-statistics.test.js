@@ -1,6 +1,6 @@
 const nock = require('nock');
 
-import * as Daily_statistics from '../../src/daily-statistics';
+import * as DailyStatistics from '../../src/daily-statistics';
 
 // Stub the API to return hardcoded data at specific endpoints
 const CODE_200_ENDPOINT = 'https://200response.com';
@@ -50,13 +50,13 @@ describe('daily-statistics', () => {
     });
 
     // Create an array of all functions in the module
-    const functions = Object.keys(Daily_statistics).filter(name => name !== 'default');
+    const functions = Object.keys(DailyStatistics).filter(name => name !== 'default');
 
     // Loop through every function and run the test
     for(let i = 0; i < functions.length; i++){
         describe(functions[i], () => {
             it('returns data with a 2XX code', async () => {
-                const { response, error } = await Daily_statistics[functions[i]]({
+                const { response, error } = await DailyStatistics[functions[i]]({
                     url: CODE_200_ENDPOINT
                 });
 
@@ -66,7 +66,7 @@ describe('daily-statistics', () => {
             });
 
             it('returns an error with a 4XX code', async () => {
-                const { response, error } = await Daily_statistics[functions[i]]({
+                const { response, error } = await DailyStatistics[functions[i]]({
                     url: CODE_400_ENDPOINT
                 });
 
@@ -76,7 +76,7 @@ describe('daily-statistics', () => {
             });
 
             it('returns an error with a 5XX code', async () => {
-                const { response, error } = await Daily_statistics[functions[i]]({
+                const { response, error } = await DailyStatistics[functions[i]]({
                     url: CODE_500_ENDPOINT
                 });
 

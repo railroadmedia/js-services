@@ -1,6 +1,6 @@
 const nock = require('nock');
 
-import * as Access_codes from '../../src/access-codes';
+import * as AccessCodes from '../../src/access-codes';
 
 // Stub the API to return hardcoded data at specific endpoints
 const CODE_200_ENDPOINT = 'https://200response.com';
@@ -55,13 +55,13 @@ describe('access-codes', () => {
     });
 
     // Create an array of all functions in the module
-    const functions = Object.keys(Access_codes).filter(name => name !== 'default');
+    const functions = Object.keys(AccessCodes).filter(name => name !== 'default');
 
     // Loop through every function and run the test
     for(let i = 0; i < functions.length; i++){
         describe(functions[i], () => {
             it('returns data with a 2XX code', async () => {
-                const { response, error } = await Access_codes[functions[i]]({
+                const { response, error } = await AccessCodes[functions[i]]({
                     url: CODE_200_ENDPOINT
                 });
 
@@ -71,7 +71,7 @@ describe('access-codes', () => {
             });
 
             it('returns an error with a 4XX code', async () => {
-                const { response, error } = await Access_codes[functions[i]]({
+                const { response, error } = await AccessCodes[functions[i]]({
                     url: CODE_400_ENDPOINT
                 });
 
@@ -81,7 +81,7 @@ describe('access-codes', () => {
             });
 
             it('returns an error with a 5XX code', async () => {
-                const { response, error } = await Access_codes[functions[i]]({
+                const { response, error } = await AccessCodes[functions[i]]({
                     url: CODE_500_ENDPOINT
                 });
 

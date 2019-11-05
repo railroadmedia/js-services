@@ -1,5 +1,5 @@
 /**
- * @module User_login
+ * @module UserLogin
  */
 
 import axios from 'axios';
@@ -109,11 +109,11 @@ export function userUpdate({
 }
 
 
-const User_login = {
+const UserLogin = {
     userLogin,
     userLogout,
     userForgotPassword,
     userUpdate,
 };
 
-export default User_login;
+export default UserLogin;

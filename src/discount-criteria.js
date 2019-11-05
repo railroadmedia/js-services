@@ -1,5 +1,5 @@
 /**
- * @module Discount_criteria
+ * @module DiscountCriteria
  */
 
 import axios from 'axios';
@@ -134,10 +134,10 @@ export function deleteDiscountCriteria({
     });    
 }
 
-const Discount_criteria = {
+const DiscountCriteria = {
     putDiscountCriteria,
     patchDiscountCriteria,
     deleteDiscountCriteria,
 };
 
-export default Discount_criteria;
+export default DiscountCriteria;

@@ -1,5 +1,5 @@
 /**
- * @module Payment_method
+ * @module PaymentMethods
  */
 
 import axios from 'axios';
@@ -149,11 +149,11 @@ export function deletePaymentMethod({
     });    
 }
 
-const Payment_method = {
+const PaymentMethods = {
     getPaymentMethod,
     putPaymentMethod,
     patchPaymentMethod,
     deletePaymentMethod,
 };
 
-export default Payment_method;
+export default PaymentMethods;

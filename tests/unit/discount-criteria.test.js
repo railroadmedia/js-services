@@ -1,6 +1,6 @@
 const nock = require('nock');
 
-import * as Discount_criteria from '../../src/discount-criteria';
+import * as DiscountCriteria from '../../src/discount-criteria';
 
 // Stub the API to return hardcoded data at specific endpoints
 const CODE_200_ENDPOINT = 'https://200response.com';
@@ -50,13 +50,13 @@ describe('discount-criteria', () => {
     });
 
     // Create an array of all functions in the module
-    const functions = Object.keys(Discount_criteria).filter(name => name !== 'default');
+    const functions = Object.keys(DiscountCriteria).filter(name => name !== 'default');
 
     // Loop through every function and run the test
     for(let i = 0; i < functions.length; i++){
         describe(functions[i], () => {
             it('returns data with a 2XX code', async () => {
-                const { response, error } = await Discount_criteria[functions[i]]({
+                const { response, error } = await DiscountCriteria[functions[i]]({
                     url: CODE_200_ENDPOINT
                 });
 
@@ -66,7 +66,7 @@ describe('discount-criteria', () => {
             });
 
             it('returns an error with a 4XX code', async () => {
-                const { response, error } = await Discount_criteria[functions[i]]({
+                const { response, error } = await DiscountCriteria[functions[i]]({
                     url: CODE_400_ENDPOINT
                 });
 
@@ -76,7 +76,7 @@ describe('discount-criteria', () => {
             });
 
             it('returns an error with a 5XX code', async () => {
-                const { response, error } = await Discount_criteria[functions[i]]({
+                const { response, error } = await DiscountCriteria[functions[i]]({
                     url: CODE_500_ENDPOINT
                 });
 

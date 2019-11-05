@@ -1,6 +1,6 @@
 const nock = require('nock');
 
-import * as User_products from '../../src/user-products';
+import * as UserProducts from '../../src/user-products';
 
 // Stub the API to return hardcoded data at specific endpoints
 const CODE_200_ENDPOINT = 'https://200response.com';
@@ -50,13 +50,13 @@ describe('user-products', () => {
     });
 
     // Create an array of all functions in the module
-    const functions = Object.keys(User_products).filter(name => name !== 'default');
+    const functions = Object.keys(UserProducts).filter(name => name !== 'default');
 
     // Loop through every function and run the test
     for(let i = 0; i < functions.length; i++){
         describe(functions[i], () => {
             it('returns data with a 2XX code', async () => {
-                const { response, error } = await User_products[functions[i]]({
+                const { response, error } = await UserProducts[functions[i]]({
                     url: CODE_200_ENDPOINT
                 });
 
@@ -66,7 +66,7 @@ describe('user-products', () => {
             });
 
             it('returns an error with a 4XX code', async () => {
-                const { response, error } = await User_products[functions[i]]({
+                const { response, error } = await UserProducts[functions[i]]({
                     url: CODE_400_ENDPOINT
                 });
 
@@ -76,7 +76,7 @@ describe('user-products', () => {
             });
 
             it('returns an error with a 5XX code', async () => {
-                const { response, error } = await User_products[functions[i]]({
+                const { response, error } = await UserProducts[functions[i]]({
                     url: CODE_500_ENDPOINT
                 });
 

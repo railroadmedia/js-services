@@ -1,5 +1,5 @@
 /**
- * @module Daily_statistics
+ * @module DailyStatistics
  */
 
 import axios from 'axios';
@@ -38,8 +38,8 @@ export function dailyStatistics({
     });    
 }
 
-const Daily_statistics = {
+const DailyStatistics = {
     dailyStatistics,
 };
 
-export default Daily_statistics;
+export default DailyStatistics;

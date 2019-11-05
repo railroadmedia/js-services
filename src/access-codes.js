@@ -1,5 +1,5 @@
 /**
- * @module Access_codes
+ * @module AccessCodes
  */
 
 import axios from 'axios';
@@ -124,10 +124,10 @@ export function getAccessCodesSearch({
     });    
 }
 
-const Access_codes = {
+const AccessCodes = {
     redeemAccessCodes,
     getAccessCodes,
     getAccessCodesSearch,
 };
 
-export default Access_codes;
+export default AccessCodes;

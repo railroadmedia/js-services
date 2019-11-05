@@ -1,20 +1,20 @@
 /** @module Services */
 
 import axios from 'axios';
-import Access_codes from './src/access-codes';
+import AccessCodes from './src/access-codes';
 import Cart from './src/cart';
-import Daily_statistics from './src/daily-statistics';
-import Discount_criteria from './src/discount-criteria';
+import DailyStatistics from './src/daily-statistics';
+import DiscountCriteria from './src/discount-criteria';
 import Discount from './src/discount';
 import Order from './src/order';
-import Payment_method from './src/payment-method';
+import PaymentMethods from './src/payment-method';
 import Payments from './src/payments';
 import Products from './src/products';
 import Railcontent from './src/railcontent';
 import Shipping from './src/shipping';
 import Subscriptions from './src/subscriptions';
-import User_login from './src/user-login';
-import User_products from './src/user-products';
+import UserLogin from './src/user-login';
+import UserProducts from './src/user-products';
 
 /**
  * Configure the instance of axios with some defaults
@@ -66,20 +66,20 @@ export * from './src/user-products';
 
 // Export every module individually
 const Services = {
-    Access_codes,
+    AccessCodes,
     Cart,
-    Daily_statistics,
-    Discount_criteria,
+    DailyStatistics,
+    DiscountCriteria,
     Discount,
     Order,
-    Payment_method,
+    PaymentMethods,
     Payments,
     Products,
     Railcontent,
     Shipping,
     Subscriptions,
-    User_login,
-    User_products,
+    UserLogin,
+    UserProducts,
 };
 
 // Create Services object to export as default

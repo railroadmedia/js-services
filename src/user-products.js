@@ -1,5 +1,5 @@
 /**
- * @module User_products
+ * @module UserProducts
  */
 
 import axios from 'axios';
@@ -164,10 +164,10 @@ export function deleteUserProduct({
     });    
 }
 
-const User_products = {
+const UserProducts = {
     getUserProducts,
     putUserProduct,
     deleteUserProduct,
 };
 
-export default User_products;
+export default UserProducts;

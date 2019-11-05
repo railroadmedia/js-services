@@ -6,8 +6,6 @@ HTTP request modules for all Musora back-end services
 
 ## Installation
 
-_Note that the package is not officially published yet so these commands will not work._
-
 ### Yarn
 `yard add @musora/services`
 

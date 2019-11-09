@@ -21,10 +21,8 @@ export function userLogin({
     return new Promise((resolve) => {
         axios
             .put(`${url}/usora/api/login`, {
-                data: {
-                    email,
-                    password,
-                },
+                email,
+                password,
             })
             .then((response) => {
                 resolve({ response });
@@ -32,7 +30,7 @@ export function userLogin({
             .catch((error) => {
                 resolve({ error });
             });
-    });    
+    });
 }
 
 /**
@@ -47,14 +45,14 @@ export function userLogout({
 }) {
     return new Promise((resolve) => {
         axios
-            .put(`${url}/usora/api/profile`)
+            .put(`${url}/usora/api/logout`)
             .then((response) => {
                 resolve({ response });
             })
             .catch((error) => {
                 resolve({ error });
             });
-    });    
+    });
 }
 
 /**
@@ -67,14 +65,12 @@ export function userLogout({
  */
 export function userForgotPassword({
     url = '',
-    email, 
+    email,
 }) {
     return new Promise((resolve) => {
         axios
             .put(`${url}/usora/api/forgot`, {
-                data: {
-                    email,
-                },
+                email,
             })
             .then((response) => {
                 resolve({ response });
@@ -82,7 +78,7 @@ export function userForgotPassword({
             .catch((error) => {
                 resolve({ error });
             });
-    });    
+    });
 }
 
 
@@ -91,21 +87,27 @@ export function userForgotPassword({
  *
  * @param {Object} params - Function parameters
  * @param {String} params.url - The endpoint url
+ * @param {String} params.attributes - The attributes of the user to update
  * @returns {Promise} Response or Error Object
  */
 export function userUpdate({
     url = '',
+    attributes = {},
 }) {
     return new Promise((resolve) => {
         axios
-            .post(`${url}/usora/api/profile/update`)
+            .post(`${url}/usora/api/profile/update`, {
+                data: {
+                    attributes,
+                },
+            })
             .then((response) => {
                 resolve({ response });
             })
             .catch((error) => {
                 resolve({ error });
             });
-    });    
+    });
 }
 
 

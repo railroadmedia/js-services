@@ -62,4 +62,5 @@ Update profile
 | --- | --- | --- |
 | params | <code>Object</code> | Function parameters |
 | params.url | <code>String</code> | The endpoint url |
+| params.attributes | <code>String</code> | The attributes of the user to update |
 
